@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Портфолио Python / Web-разработчика</title>
+  <meta name="description" content="Портфолио программиста: Python, JavaScript, HTML, CSS. Более 5 лет опыта и 35+ проектов." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <header class="header">
+    <a class="logo" href="#top" aria-label="На главную">
+      <span class="logo-mark">&lt;/&gt;</span>
+      <span class="logo-text">Portfolio</span>
+    </a>
+
+    <nav class="nav" aria-label="Навигация">
+      <a href="#about">Обо мне</a>
+      <a href="#skills">Навыки</a>
+      <a href="#projects">Проекты</a>
+      <a href="#photos">Фото</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <button class="burger" type="button" aria-label="Открыть меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-content">
+        <p class="eyebrow">Python · JavaScript · HTML · CSS</p>
+        <h1>Привет, я программист и web-разработчик с 5-летним опытом.</h1>
+        <p class="hero-text">
+          Создаю удобные сайты, сервисы, интерфейсы и автоматизацию. За 5 лет я разработал более
+          <strong>35 проектов</strong>: от мессенджеров и веб-приложений до инструментов для обработки текста.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">Посмотреть проекты</a>
+          <a class="btn ghost" href="#contacts">Связаться</a>
+        </div>
+
+        <div class="stats" aria-label="Ключевые показатели">
+          <div>
+            <span>5+</span>
+            <p>лет опыта</p>
+          </div>
+          <div>
+            <span>35+</span>
+            <p>проектов</p>
+          </div>
+          <div>
+            <span>4</span>
+            <p>основных технологии</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Главная специализация">
+        <div class="code-window">
+          <div class="window-dots">
+            <i></i><i></i><i></i>
+          </div>
+<pre><code>class Developer:
+    stack = ["Python", "JS", "HTML", "CSS"]
+    experience = "5 лет"
+    projects = "35+"
+
+    def build(self):
+        return "Надёжный и красивый продукт"</code></pre>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="section-title">
+        <p class="eyebrow">Обо мне</p>
+        <h2>Разрабатываю проекты, которые выглядят современно и решают реальные задачи.</h2>
+      </div>
+
+      <div class="about-grid">
+        <article class="glass-card">
+          <h3>Кто я</h3>
+          <p>
+            Я программист-разработчик, работаю с Python, JavaScript, CSS и HTML. Мне нравится создавать
+            понятные интерфейсы, быстрые сайты и полезные инструменты, которыми удобно пользоваться каждый день.
+          </p>
+        </article>
+
+        <article class="glass-card">
+          <h3>Мой подход</h3>
+          <p>
+            В проектах я уделяю внимание не только коду, но и внешнему виду: аккуратная структура,
+            адаптивность, читаемый дизайн, понятная логика и удобство для пользователя.
+          </p>
+        </article>
+
+        <article class="glass-card">
+          <h3>Лучший проект</h3>
+          <p>
+            Моя самая сильная разработка — <strong>Yupi Messenger</strong>, мессенджер с музыкальным плеером.
+            Это проект, где соединены общение, мультимедиа и современный интерфейс.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-title center">
+        <p class="eyebrow">Навыки</p>
+        <h2>Стек, с которым я работаю</h2>
+      </div>
+
+      <div class="skills">
+        <div class="skill-card">
+          <span>Python</span>
+          <p>Скрипты, автоматизация, backend-логика, обработка данных.</p>
+        </div>
+        <div class="skill-card">
+          <span>JavaScript</span>
+          <p>Интерактивные интерфейсы, логика сайта, динамические блоки.</p>
+        </div>
+        <div class="skill-card">
+          <span>HTML</span>
+          <p>Чистая структура страниц, семантика и удобная разметка.</p>
+        </div>
+        <div class="skill-card">
+          <span>CSS</span>
+          <p>Адаптивный дизайн, анимации, современный визуальный стиль.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects-section">
+      <div class="section-title">
+        <p class="eyebrow">Проекты</p>
+        <h2>Некоторые из моих разработок</h2>
+        <p class="section-subtitle">
+          Проекты ниже загружаются из файла <code>data/projects.js</code>. Там можно менять названия,
+          ссылки, описания и изображения.
+        </p>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <section id="photos" class="section photos-section">
+      <div class="section-title">
+        <p class="eyebrow">Галерея</p>
+        <h2>Фото и скриншоты</h2>
+        <p class="section-subtitle">
+          Загружай изображения в папку <code>assets/photos</code>, а затем добавляй их названия в файл
+          <code>data/photos.js</code>.
+        </p>
+      </div>
+
+      <div class="photos-grid" id="photosGrid"></div>
+    </section>
+
+    <section id="contacts" class="section contact">
+      <div class="contact-card">
+        <div>
+          <p class="eyebrow">Контакты</p>
+          <h2>Готов обсудить проект или идею</h2>
+          <p>
+            Напиши мне, если нужен сайт, web-приложение, автоматизация, интерфейс или доработка проекта.
+          </p>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:yourmail@example.com">yourmail@example.com</a>
+          <a href="https://t.me/your_username" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://github.com/your_username" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Portfolio. Сделано с вниманием к деталям.</p>
+  </footer>
+
+  <script src="data/projects.js"></script>
+  <script src="data/photos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
