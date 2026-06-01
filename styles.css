@@ -77,6 +77,7 @@ code {
 }
 
 .logo-mark {
+  position: relative;
   display: grid;
   place-items: center;
   width: 38px;
@@ -224,7 +225,8 @@ h3 {
 .project-card,
 .photo-card,
 .contact-card,
-.code-window {
+.code-window,
+.profile-photo {
   border: 1px solid var(--card-border);
   background: var(--card);
   box-shadow: var(--shadow);
@@ -248,8 +250,125 @@ h3 {
   color: var(--muted);
 }
 
-.hero-card {
+.hero-profile {
+  display: grid;
+  gap: 18px;
+}
+
+.profile-photo {
   position: relative;
+  overflow: hidden;
+  width: min(360px, 100%);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  cursor: pointer;
+  transform-origin: center;
+  background:
+    linear-gradient(135deg, rgba(124, 92, 255, 0.36), rgba(0, 212, 255, 0.20)),
+    rgba(255, 255, 255, 0.06);
+  transition:
+    border-radius 0.45s ease,
+    clip-path 0.45s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease,
+    opacity 0.25s ease;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.profile-photo:hover {
+  box-shadow:
+    0 26px 75px rgba(0, 0, 0, 0.42),
+    0 0 0 7px rgba(0, 212, 255, 0.10);
+}
+
+.profile-photo.is-jumping {
+  animation: photoJump 0.55s ease;
+}
+
+.profile-photo.is-star {
+  border-radius: 0;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.profile-photo span {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  padding: 28px;
+  text-align: center;
+  color: var(--text);
+  font-weight: 900;
+}
+
+.profile-photo.empty-profile span {
+  display: grid;
+}
+
+.profile-photo.is-scroll-hidden {
+  opacity: 0;
+}
+
+.floating-profile-photo {
+  position: fixed;
+  z-index: 999;
+  pointer-events: none;
+  display: none;
+  overflow: hidden;
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+  background:
+    linear-gradient(135deg, rgba(124, 92, 255, 0.36), rgba(0, 212, 255, 0.20)),
+    rgba(255, 255, 255, 0.06);
+}
+
+.floating-profile-photo.active {
+  display: block;
+}
+
+.floating-profile-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@keyframes photoJump {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  38% {
+    transform: translateY(-18px) scale(1.035);
+  }
+
+  68% {
+    transform: translateY(4px) scale(0.99);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
 }
 
 .code-window {
@@ -356,14 +475,16 @@ pre {
 
 .project-image {
   position: relative;
-  min-height: 210px;
-  background: linear-gradient(135deg, rgba(124, 92, 255, 0.5), rgba(0, 212, 255, 0.25));
+  min-height: 230px;
+  background:
+    linear-gradient(135deg, rgba(124, 92, 255, 0.56), rgba(0, 212, 255, 0.26)),
+    rgba(255, 255, 255, 0.05);
   overflow: hidden;
 }
 
 .project-image img {
   width: 100%;
-  height: 230px;
+  height: 255px;
   display: block;
   object-fit: cover;
 }
@@ -371,7 +492,7 @@ pre {
 .project-placeholder {
   display: grid;
   place-items: center;
-  height: 230px;
+  height: 255px;
   padding: 26px;
   text-align: center;
   font-size: 18px;
@@ -399,39 +520,37 @@ pre {
   font-weight: 700;
 }
 
-.project-link {
+.project-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.github-button {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 22px;
+  border: 1px solid rgba(0, 212, 255, 0.45);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.88), rgba(0, 212, 255, 0.82));
+  color: #ffffff;
   font-weight: 900;
-  color: var(--accent-2);
-}
-
-.photos-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 34px;
-}
-
-.photo-card {
-  overflow: hidden;
-  min-height: 240px;
-}
-
-.photo-card img {
-  width: 100%;
-  height: 240px;
-  display: block;
-  object-fit: cover;
-}
-
-.photo-empty {
-  display: grid;
-  place-items: center;
-  min-height: 240px;
-  padding: 24px;
   text-align: center;
-  color: var(--muted);
+  box-shadow: 0 12px 32px rgba(0, 212, 255, 0.16);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
+
+.github-button:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 18px 42px rgba(0, 212, 255, 0.24);
+}
+
 
 .contact-card {
   display: grid;
@@ -508,7 +627,6 @@ pre {
   .about-grid,
   .projects-grid,
   .skills,
-  .photos-grid,
   .contact-card {
     grid-template-columns: 1fr 1fr;
   }
@@ -537,7 +655,6 @@ pre {
   .about-grid,
   .projects-grid,
   .skills,
-  .photos-grid,
   .contact-card {
     grid-template-columns: 1fr;
   }

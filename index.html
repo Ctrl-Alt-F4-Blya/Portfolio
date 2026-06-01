@@ -20,7 +20,6 @@
       <a href="#about">Обо мне</a>
       <a href="#skills">Навыки</a>
       <a href="#projects">Проекты</a>
-      <a href="#photos">Фото</a>
       <a href="#contacts">Контакты</a>
     </nav>
 
@@ -35,7 +34,8 @@
     <section class="hero section">
       <div class="hero-content">
         <p class="eyebrow">Python · JavaScript · HTML · CSS</p>
-        <h1>Привет, я программист и web-разработчик с 5-летним опытом.</h1>
+        <h1>Привет, я программист и</h1>
+        <h1>web-разработчик с 5-летним опытом.</h1>
         <p class="hero-text">
           Создаю удобные сайты, сервисы, интерфейсы и автоматизацию. За 5 лет я разработал более
           <strong>35 проектов</strong>: от мессенджеров и веб-приложений до инструментов для обработки текста.
@@ -62,7 +62,11 @@
         </div>
       </div>
 
-      <aside class="hero-card" aria-label="Главная специализация">
+      <aside class="hero-profile" aria-label="Фото разработчика">
+        <div class="profile-photo">
+          <img src="assets/photos/my-photo.png" alt="Моё фото" onerror="this.style.display='none'; this.parentElement.classList.add('empty-profile');">
+        </div>
+
         <div class="code-window">
           <div class="window-dots">
             <i></i><i></i><i></i>
@@ -141,27 +145,11 @@
       <div class="section-title">
         <p class="eyebrow">Проекты</p>
         <h2>Некоторые из моих разработок</h2>
-        <p class="section-subtitle">
-          Проекты ниже загружаются из файла <code>data/projects.js</code>. Там можно менять названия,
-          ссылки, описания и изображения.
-        </p>
       </div>
 
       <div class="projects-grid" id="projectsGrid"></div>
     </section>
 
-    <section id="photos" class="section photos-section">
-      <div class="section-title">
-        <p class="eyebrow">Галерея</p>
-        <h2>Фото и скриншоты</h2>
-        <p class="section-subtitle">
-          Загружай изображения в папку <code>assets/photos</code>, а затем добавляй их названия в файл
-          <code>data/photos.js</code>.
-        </p>
-      </div>
-
-      <div class="photos-grid" id="photosGrid"></div>
-    </section>
 
     <section id="contacts" class="section contact">
       <div class="contact-card">
@@ -174,9 +162,9 @@
         </div>
 
         <div class="contact-links">
-          <a href="mailto:yourmail@example.com">yourmail@example.com</a>
-          <a href="https://t.me/your_username" target="_blank" rel="noopener">Telegram</a>
-          <a href="https://github.com/your_username" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:zimax808@gmail.com">zimax808@gmail.com</a>
+          <a href="https://t.me/Brodyaga_Maksim" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://github.com/Ctrl-Alt-F4-Blya" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </section>
@@ -187,7 +175,6 @@
   </footer>
 
   <script src="data/projects.js"></script>
-  <script src="data/photos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
